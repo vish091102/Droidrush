@@ -17,6 +17,7 @@
             android:layout_height="250dp"
             android:background="#5CC097">
 
+
             <ImageView
                 android:id="@+id/profileDp"
                 android:layout_width="150dp"
@@ -37,6 +38,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="15dp"
@@ -123,16 +125,17 @@
                 android:background="#36454F"
                 android:id="@+id/divider_phone"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/btnToOwner"
-                android:layout_below="@+id/divider_phone"
-                android:layout_marginTop="200dp"
-                android:text="Owner's Page"/>
-
         </RelativeLayout>
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bottomNavigation"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/bottom_nav_menu"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="100dp"/>
 
     </LinearLayout>
 

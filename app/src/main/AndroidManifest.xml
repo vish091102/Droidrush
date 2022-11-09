@@ -13,18 +13,25 @@
         android:theme="@style/Theme.LoginPage"
         tools:targetApi="31">
         <activity
-            android:name=".OwnersPage_Activity"
+            android:name=".RecyclerView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
+            android:name=".OwnersPage_Activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UserProfile_Activity" />
+        </activity>
+        <activity
             android:name=".UserProfilePic_Activity"
             android:exported="false">
             <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".UserProfile_Activity" />
         </activity>
         <activity
             android:name=".UserProfile_Activity"
@@ -37,8 +44,8 @@
             android:name=".SignIn_Activity"
             android:exported="false">
             <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".SplashScreenActivity"
@@ -57,8 +64,8 @@
             android:name=".SignUp_Activity"
             android:exported="false">
             <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".MainActivity"
@@ -67,6 +74,10 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

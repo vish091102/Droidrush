@@ -1,13 +1,17 @@
 package com.example.loginpage;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NavUtils;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +36,7 @@ import java.util.regex.Pattern;
 public class SignUp_Activity extends AppCompatActivity {
     private TextView loginAcc;
     private EditText edtTxtName, edtTxtPhone, edtTxtEmail, edtTxtPass;
+    private FirebaseAuth authProfile;
     private static final String TAG = "SingUp_Activity";
 
     @Override
@@ -40,6 +45,7 @@ public class SignUp_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         getSupportActionBar().setTitle("Sign Up");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         loginAcc = findViewById(R.id.createAccount);
 
@@ -119,6 +125,7 @@ public class SignUp_Activity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+
                     FirebaseUser firebaseUser = auth.getCurrentUser();
 
                     //We can save name of the User in the user object itself
@@ -137,19 +144,21 @@ public class SignUp_Activity extends AppCompatActivity {
 
                             if(task.isSuccessful()){
 
-                                Toast.makeText(SignUp_Activity.this, "User registered successfully", Toast.LENGTH_LONG).show();
+                                //Send verification Email
+                                firebaseUser.sendEmailVerification();
+
+                                Toast.makeText(SignUp_Activity.this, "User registered successfully. Please login to confirm your credentials.", Toast.LENGTH_LONG).show();
 
                                 //Open User Profile after successful registration
-                                Intent intent = new Intent(SignUp_Activity.this, UserProfile_Activity.class);
+                                Intent intent = new Intent(SignUp_Activity.this, SignIn_Activity.class);
                                 //To prevent User from returning back to registered Activity on pressing back button after Registration
                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
                                 startActivity(intent);
                                 finish();   //to close Registration Activity
                             }else {
-                                Toast.makeText(SignUp_Activity.this, "User Registered failed. Please try again", Toast.LENGTH_LONG).show();
+                                Toast.makeText(SignUp_Activity.this, "User Registered failed. Please try again.", Toast.LENGTH_LONG).show();
                             }
-
                         }
                     });
                 }else {
@@ -171,5 +180,18 @@ public class SignUp_Activity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == android.R.id.home){
+            NavUtils.navigateUpFromSameTask(SignUp_Activity.this);
+        } else {
+            Toast.makeText(SignUp_Activity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

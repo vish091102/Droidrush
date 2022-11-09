@@ -20,6 +20,7 @@
             android:id="@+id/uploadPicHead"
             android:text="Upload your profile pic"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
         <Button
@@ -32,6 +33,35 @@
             android:layout_marginRight="70dp"
             android:layout_marginLeft="70dp"
             android:backgroundTint="@color/teal_200"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:id="@+id/imageViewProfileDp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/uploadPicChooseBtn"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/uploadPicBtn"
+            android:layout_below="@id/imageViewProfileDp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:text="Upload"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_centerVertical="true"
+            android:id="@+id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:elevation="10dp"
+            android:visibility="gone"/>
+
+
 
 
 
