@@ -49,6 +49,7 @@ public class SignIn_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(SignIn_Activity.this , SignUp_Activity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -168,10 +169,10 @@ public class SignIn_Activity extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == android.R.id.home){
-            NavUtils.navigateUpFromSameTask(SignIn_Activity.this);
-        } else {
-            Toast.makeText(SignIn_Activity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-        }
+            NavUtils.navigateUpFromSameTask(SignIn_Activity.this);}
+//         else {
+//            Toast.makeText(SignIn_Activity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+//        }
 
         return super.onOptionsItemSelected(item);
     }

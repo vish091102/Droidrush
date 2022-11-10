@@ -92,7 +92,7 @@ public class UserProfilePic_Activity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == PICK_IMAGE_REQUEST && requestCode == RESULT_OK && data.getData() != null) {
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             uriImage = data.getData();
             imageViewUploadPic.setImageURI(uriImage);    //This image(uriImage) is already in the device and not getting from web
         }

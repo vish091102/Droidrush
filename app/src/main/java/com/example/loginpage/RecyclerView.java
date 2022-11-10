@@ -3,8 +3,10 @@ package com.example.loginpage;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.example.loginpage.Adapter.RecipeAdapter;
 import com.example.loginpage.models2.recipies;
@@ -13,12 +15,21 @@ import java.util.ArrayList;
 
 public class RecyclerView extends AppCompatActivity {
 androidx.recyclerview.widget.RecyclerView recyclerView;
-    @Override
+    Button back;
+@Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
 recyclerView =findViewById(R.id.recyclerview);
-
+back=findViewById(R.id.back);
+back.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(RecyclerView.this,UserProfile_Activity.class));
+        finish();
+    }
+});
         ArrayList<recipies> list=new ArrayList<>();
         list.add(new recipies(R.drawable.chillypotatoe2,"chilly potato","$4","checkout"));
         list.add(new recipies(R.drawable.momos,"momos","$3","checkout"));

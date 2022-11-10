@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/back3">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="632dp"
-        tools:listitem="@layout/samplelayout" />
+        tools:listitem="@layout/samplelayout"
+        android:background="@drawable/back3"/>
 
     <Button
         android:id="@+id/back"

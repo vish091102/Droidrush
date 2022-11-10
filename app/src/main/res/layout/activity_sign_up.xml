@@ -16,7 +16,8 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="#8BC34A">
+
+            android:background="@drawable/back3">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -27,23 +28,13 @@
                 android:layout_marginBottom="15dp"
                 android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:id="@+id/profile_image"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:src="@drawable/avatar"
+                    android:src="@drawable/ramengf"
                     app:civ_border_color="#e8a564"
                     app:civ_border_width="2dp" />
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:gravity="center"
-                    android:text="Upload Image"
-                    android:textColor="#070707"
-                    android:textStyle="bold" />
 
                 <View
                     android:id="@+id/view"
@@ -135,7 +126,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Or With" />
+                        android:text="Or"
+                        android:textSize="24sp"/>
 
                     <View
                         android:id="@+id/view5"
@@ -150,32 +142,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/fbbackground"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="Facebook"
-                        android:textColor="#F6F4F4" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/googlebackground"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        android:text="Google"
-                        android:textColor="#F6F4F4" />
-                </LinearLayout>
+                    android:orientation="horizontal"/>
 
                 <TextView
                     android:id="@+id/createAccount"
@@ -185,7 +152,8 @@
                     android:gravity="center"
                     android:text="Already Have Account? Login"
                     android:textColor="#070707"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="24sp"/>
 
             </LinearLayout>
 

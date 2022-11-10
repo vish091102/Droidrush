@@ -5,17 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserProfile_Activity"
-    android:background="#D3D3D3">
+    android:background="@drawable/user">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/user">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="#5CC097">
+            android:background="@drawable/user">
 
 
             <ImageView
